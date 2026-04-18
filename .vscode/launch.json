@@ -1,0 +1,41 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Backend: Django Server",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/backendM/manage.py",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "autoStartBrowser": false,
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/backendM",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/backendM"
+            }
+        },
+        {
+            "name": "Frontend: React App",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "start"
+            ],
+            "cwd": "${workspaceFolder}/frontend",
+            "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Full Stack OncoPlanner",
+            "configurations": [
+                "Backend: Django Server",
+                "Frontend: React App"
+            ]
+        }
+    ]
+}
